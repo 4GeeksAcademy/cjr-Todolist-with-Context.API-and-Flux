@@ -1,20 +1,17 @@
-import { Jumbotron } from "@/components/Jumbotron";
-import { Button, Col, Container, Row } from "react-bootstrap";
-
+import { Container } from "react-bootstrap";
+import { TodoProvider } from "@/components/TodoContext";
+import { TodoList } from "@/components/TodoList";
 
 export default function Home() {
   return (
     <div>
       <Container>
-        <Row>
-          <Col>
-            <h1>My Own React Template</h1>
-            <Button variant="primary">Click Here</Button>
-          </Col>
-        </Row>
-      </Container>
-      <Container>
-        <Jumbotron />
+        <TodoProvider>
+          <div className="App">
+            <h1>TO DO List</h1>
+            <TodoList />
+          </div>
+        </TodoProvider>
       </Container>
     </div>
   );
